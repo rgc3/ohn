@@ -1,0 +1,33 @@
+<%= form_for(@overheard) do |f| %>
+  <% if @overheard.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@overheard.errors.count, "error") %> prohibited this overheard from being saved:</h2>
+
+      <ul>
+      <% @overheard.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :oh_entry %><br>
+    <%= f.text_area :oh_entry %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

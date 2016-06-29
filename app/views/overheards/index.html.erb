@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Overheards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Location</th>
+      <th>Oh entry</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @overheards.each do |overheard| %>
+      <tr>
+        <td><%= overheard.title %></td>
+        <td><%= overheard.author %></td>
+        <td><%= overheard.location %></td>
+        <td><%= overheard.oh_entry %></td>
+        <td><%= link_to 'Show', overheard %></td>
+        <td><%= link_to 'Edit', edit_overheard_path(overheard) %></td>
+        <td><%= link_to 'Destroy', overheard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Overheard', new_overheard_path %>

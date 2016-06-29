@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @overheard.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @overheard.author %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @overheard.location %>
+</p>
+
+<p>
+  <strong>Oh entry:</strong>
+  <%= @overheard.oh_entry %>
+</p>
+
+<%= link_to 'Edit', edit_overheard_path(@overheard) %> |
+<%= link_to 'Back', overheards_path %>
