@@ -8,7 +8,7 @@
     <h4>Title: </h4><%= overheard.title %><br />
     <%= overheard.oh_entry %>
 
-    <div class="btn-group" role="group" aria-label="...">
+    <div class="btn-group pull-right" role="group" aria-label="...">
       <button type="button" class="btn btn-default"><%= link_to 'Show', overheard %></button>
       <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_overheard_path(overheard) %></button>
       <button type="button" class="btn btn-default"><%= link_to 'Destroy', overheard, method: :delete, data: { confirm: 'Are you sure?' } %></button>
