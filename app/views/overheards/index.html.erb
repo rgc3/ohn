@@ -2,31 +2,25 @@
 
 <h1>Listing Overheards</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Location</th>
-      <th>Oh entry</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% @overheards.each do |overheard| %>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <h4>Title: </h4><%= overheard.title %><br />
+    <%= overheard.oh_entry %>
 
-  <tbody>
-    <% @overheards.each do |overheard| %>
-      <tr>
-        <td><%= overheard.title %></td>
-        <td><%= overheard.author %></td>
-        <td><%= overheard.location %></td>
-        <td><%= overheard.oh_entry %></td>
-        <td><%= link_to 'Show', overheard %></td>
-        <td><%= link_to 'Edit', edit_overheard_path(overheard) %></td>
-        <td><%= link_to 'Destroy', overheard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div class="btn-group" role="group" aria-label="...">
+      <button type="button" class="btn btn-default"><%= link_to 'Show', overheard %></button>
+      <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_overheard_path(overheard) %></button>
+      <button type="button" class="btn btn-default"><%= link_to 'Destroy', overheard, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+    </div>
+
+  </div>
+  <div class="panel-footer">
+    <h4>Author: </h4><%= overheard.author %>
+    <h4>Location: </h4><%= overheard.location %>
+  </div>
+</div>
+<% end %>
 
 <br>
 
