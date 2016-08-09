@@ -25,3 +25,31 @@
 <br>
 
 <%= link_to 'New Overheard', new_overheard_path %>
+
+
+
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>overheards</h1>
+  <div class="row">
+    <% @overheards.each do |overheard| %>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <%= overheard.title %>
+          </div>
+          <div class="panel-body">
+            <%= overheard.author %>
+            <%= overheard.oh_entry %>
+          </div>
+          <div class="panel-footer">
+            <%= link_to 'Show', overheard, class: "btn btn-primary" %>
+            <%= link_to 'Edit', edit_overheard_path(overheard), class: "btn btn-warning" %>
+            <%= link_to 'Delete', overheard, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
